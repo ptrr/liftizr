@@ -13,7 +13,8 @@ describe TrainingDay do
 
   context ".viewing" do
     before do
-      @past_training_day = create(:training_day, date: Date.yesterday, lifter: lifter)
+      @past_training_day     = create(:training_day, date: Date.yesterday, lifter: lifter)
+      @upcoming_training_day = create(:training_day, date: Date.tomorrow, lifter: lifter)
     end
 
     it "shows the training days in the past" do
@@ -21,6 +22,15 @@ describe TrainingDay do
       within "#past" do
         page.should have_content @past_training_day.date
       end
+    end
+
+    it "shows the upcoming training day" do
+      visit "/training_days"
+
+      within "#upcoming" do
+        page.should have_content @upcoming_training_day.date
+      end
+
     end
   end
 end
