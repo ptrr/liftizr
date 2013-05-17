@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Lifter do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it {should have_field :email}
 end
