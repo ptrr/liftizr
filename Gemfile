@@ -12,3 +12,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development, :test do
+    gem 'rspec-rails', '~> 2.0'
+    gem 'capybara'
+    gem 'shoulda-matchers'
+end
