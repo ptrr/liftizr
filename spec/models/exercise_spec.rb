@@ -1,5 +1,7 @@
 require "spec_helper"
 
 describe Exercise do
-  #it { should  }
+  it { should have_many :sequences }
+  it { should belong_to :lifter }
+  it { should validate_presence_of :exercise_type }
 end

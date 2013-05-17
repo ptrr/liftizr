@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517193118) do
+ActiveRecord::Schema.define(:version => 20130517201754) do
 
   create_table "exercises", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "lifter_id"
+    t.string   "exercise_type"
   end
 
   create_table "lifters", :force => true do |t|
@@ -37,5 +38,14 @@ ActiveRecord::Schema.define(:version => 20130517193118) do
 
   add_index "lifters", ["email"], :name => "index_lifters_on_email", :unique => true
   add_index "lifters", ["reset_password_token"], :name => "index_lifters_on_reset_password_token", :unique => true
+
+  create_table "sequences", :force => true do |t|
+    t.integer  "weight"
+    t.integer  "repetitions"
+    t.integer  "exercise_id"
+    t.integer  "lifter_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
