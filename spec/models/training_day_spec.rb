@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe TrainingDay do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to :lifter }
+  it { should have_many :exercises }
 end
