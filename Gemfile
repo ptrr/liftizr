@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.12'
 gem 'sqlite3'
 gem 'devise'
-gem 'haml'
+gem "haml"
 
 # Gems used only for assets and not required
 # # in production environments by default.
@@ -19,4 +19,6 @@ group :development, :test do
     gem 'rspec-rails', '~> 2.0'
     gem 'capybara'
     gem 'shoulda-matchers'
+    gem "factory_girl"
 end
+
