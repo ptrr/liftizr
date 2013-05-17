@@ -3,7 +3,7 @@ class TrainingDay < ActiveRecord::Base
   belongs_to :lifter
   has_many :exercises
 
-  def previous_days(lifter)
-    where("date < #{Date.today}")
+  scope :previous_days do |lifter|
+    where("date < ? and lifter_id = ?", Date.today, lifter.id)
   end
 end
