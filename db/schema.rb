@@ -48,4 +48,10 @@ ActiveRecord::Schema.define(:version => 20130517201754) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "training_days", :force => true do |t|
+    t.date     "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
 end
