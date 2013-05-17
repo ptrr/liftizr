@@ -13,7 +13,7 @@ describe TrainingDay do
 
   context ".viewing" do
     before do
-      @past_training_day = create(:training_day, date: Date.yesterday)
+      @past_training_day = create(:training_day, date: Date.yesterday, lifter: lifter)
     end
 
     it "shows the training days in the past" do
