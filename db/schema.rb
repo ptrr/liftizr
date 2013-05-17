@@ -31,4 +31,11 @@ ActiveRecord::Schema.define(:version => 20130517191618) do
   add_index "lifters", ["email"], :name => "index_lifters_on_email", :unique => true
   add_index "lifters", ["reset_password_token"], :name => "index_lifters_on_reset_password_token", :unique => true
 
+
+  create_table "exercises", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
 end
