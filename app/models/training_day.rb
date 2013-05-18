@@ -1,5 +1,5 @@
 class TrainingDay < ActiveRecord::Base
-  attr_accessible :date
+  attr_accessible :date, :lifter
   has_many :exercises
 
   belongs_to :lifter

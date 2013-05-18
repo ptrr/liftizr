@@ -1,0 +1,8 @@
+=form_for @training_day do |f|
+  = f.fields_for :exercises do |exercise|
+    =exercise.select(:exercise_type, Exercise::EXERCISE_TYPES)
+    =exercise.fields_for :sequences do |sequence|
+      =sequence.text_field :weight
+      =sequence.text_field :repetitions
+  =f.submit
+  =f.submit "new sequence"
